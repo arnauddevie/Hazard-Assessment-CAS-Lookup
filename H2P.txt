@@ -1,0 +1,72 @@
+H200 Unstable Explosive Explosives Unstable Explosive Danger P201, P202, P281, P372, P373, P380, P401, P501
+H201 Explosive; mass explosion hazard Explosives Div 1.1 Danger P210, P230, P240, P250, P280, P370+P380, P372, P373, P401, P501
+H202 Explosive; severe projection hazard Explosives Div 1.2 Danger P210, P230, P240, P250, P280, P370+P380, P372, P373, P401, P501
+H203 Explosive; fire, blast or projection hazard Explosives Div 1.3 Danger P210, P230, P240, P250, P280,P370+P380, P372, P373, P401, P501
+H204 Fire or projection hazard Explosives Div 1.4 Warning P210, P240, P250, P280, P370+P380, P372, P373, P374, P401, P501
+H205 May mass explode in fire Explosives Div 1.5 Danger P210, P230, P240, P250, P280,P370+P380, P372, P373, P401, P501
+H220 Extremely flammable gas Flammable gases Category 1 Danger P210, P377, P381, P403
+H221 Flammable gas Flammable gases Category 2 Warning P210, P377, P381, P403
+H222 Extremely flammable aerosol Flammable aerosols Category 1 Danger P210, P211, P251, P410+P412
+H223 Flammable aerosol Flammable aerosols Category 2 Warning P210, P211, P251, P410+P412
+H224 Extremely flammable liquid and vapour Flammable liquids Category 1 Danger P210,P233, P240, P241, P242, P243, P280, P303+ P361+P353, P370+P378, P403+P235, P501
+H225 Highly Flammable liquid and vapour Flammable liquids Category 2 Danger P210, P233, P240, P241, P242, P243, P280, P303+ P361+P353, P370+P378, P403+P235, P501
+H226 Flammable liquid and vapour Flammable liquids Category 3 Warning P210, P233, P240, P241, P242, P243, P280, P303+ P361+P353, P370+P378, P403+P235, P501
+H227 Combustible liquid Flammable liquids Category 4 Warning P210, P233, P240, P241, P242, P243, P280, P303+ P361+P353, P370+P378, P403+P235, P501
+H228 Flammable solid Flammable solids Category 1 Danger P210, P240, P241, P280, P370+P378
+H240 Heating may cause an explosion Self-reactive substances and mixtures; and Organic peroxides Type A Danger P210, P220, P234, P280, P370+ P378, P370+ P380+P375, P403+P235, P411, P420, P501
+H241 Heating may cause a fire or explosion Self-reactive substances and mixtures; and Organic peroxides Type B Danger P210, P220, P234, P280, P370+P378, P370+ P380+P375, P403+P235, P411, P420, P501
+H242 Heating may cause a fire Self-reactive substances and mixtures; and Organic peroxides Type C, D, Danger P210, P220, P234, P280, P370+P378, P403+P235, P411, P420, P501
+H250 Catches fire spontaneously if exposed to air Pyrophoric liquids; Pyrorophoric solids Category 1 Danger P210, P222, P280, P302+P334, P370+P378, P422
+H251 Self-heating; may catch fire Self-heating substances and mixtures Category 1 Danger P235+P410, P280, P407, P413, P420
+H252 Self-heating in large quantities; may catch fire Self-heating substances and mixtures Category 2 Warning P235+P410, P280, P407, P413, P420
+H260 In contact with water releases flammable gases which may ignite spontaneously Substances And Mixtures Which, In Contact With Water, Emit Flammable Gases Category 1 Danger P223, P231+P232, P280, P335+ P334, P370+P378, P402+P404, P501
+H261 In contact with water releases flammable gas Substances And Mixtures Which, In Contact With Water, Emit Flammable Gases Category 2 Danger P231+P232, P280, P370+P378, P402+P404, P501
+H270 May cause or intensify fire; oxidizer Oxidising gases Category 1 Danger P220, P244, P370+P376, P403
+H271 May cause fire or explosion; strong oxidiser Oxidising liquids;Oxidising solids Category 1 Danger P210, P220, P221, P280, P283, P306+P360, P371+P380+P375, P370+P378, P501
+H272 May intensify fire; oxidizer Oxidising liquids;Oxidising solids Category 2 Danger P210, P220, P221, P280, P370+P378, P501
+H280 Contains gas under pressure; may explode if heated Gases under pressure Compressed gas Liquefied gas Dissolved gas Warning P410+P403
+H281 Contains refrigerated gas; may cause cryogenic burns or injury Gases under pressure Refrigerated liquefied gas Warning P282, P336, P315, P403
+H290 May be corrosive to metals Corrosive to Metals Category 1 Warning P234, P390, P404
+H300 Fatal if swallowed Acute toxicity,oral Category 1, 2 Danger P264, P270, P301+P310, P321, P330, P405, P501
+H301 Toxic if swallowed Acute toxicity,oral Category 3 Danger P264, P270, P301+P310, P321, P330, P405, P501
+H302 Harmful if swallowed Acute toxicity,oral Category 4 Warning P264, P270, P301+P312, P330, P501
+H303 May be harmful if swallowed Acute toxicity,oral Category 5 P312
+H304 May be fatal if swallowed and enters airways Aspiration hazard Category 1 Danger P301+P310, P331, P405, P501
+H305 May be fatal if swallowed and enters airways Aspiration hazard Category 2 Warning P301+P310, P331, P405, P501
+H310 Fatal in contact with skin Acute toxicity,dermal Category 1, 2 Danger P262, P264, P270, P280, P302+P350, P310, P322, P361, P363, P405, P501
+H311 Toxic in contact with skin Acute toxicity,dermal Category 3 Danger P280, P302+P352, P312, P322, P361, P363, P405, P501
+H312 Harmful in contact with skin Acute toxicity,dermal Category 4 Warning P280,P302+P352, P312, P322, P363, P501
+H313 May be harmful in contact with skin Acute toxicity,dermal Category 5 P312
+H314 Causes severe skin burns and eye damage Skin corrosion/irritation Category 1A, B, C Danger P260,P264, P280, P301+P330+ P331, P303+P361+P353, P363, P304+P340, P310, P321, P305+ P351+P338, P405, P501
+H315 Causes skin irritation Skin corrosion/irritation Category 2 Warning P264, P280, P302+P352, P321, P332+P313, P362
+H316 Causes mild skin irritation Skin corrosion/irritation Category 3 Warning P332+P313
+H317 May cause an allergic skin reaction Sensitisation, Skin Category 1 Warning P261, P272, P280, P302+P352, P333+P313, P321, P363, P501
+H318 Causes serious eye damage Serious eye damage/eye irritation Category 1 Danger P280, P305+P351+P338, P310
+H319 Causes serious eye irritation Serious eye damage/eye irritation Category 2A Warning P264, P280, P305+P351+P338, P337+P313
+H320 Causes eye irritation Serious eye damage/eye irritation Category 2B Warning P264, P305+P351+P338, P337+P313
+H330 Fatal if inhaled Acute toxicity,inhalation Category 1, 2 Danger P260, P271, P284, P304+P340, P310, P320, P403+P233, P405, P501
+H331 Toxic if inhaled Acute toxicity,inhalation Category 3 Danger P261, P271, P304+P340, P311, P321, P403+P233, P405, P501
+H332 Harmful if inhaled Acute toxicity,inhalation Category 4 Warning P261, P271, P304+P340, P312
+H333 May be harmful if inhaled Acute toxicity,inhalation Category 5 P304+P312
+H334 May cause allergy or asthma symptoms or breathing difficulties if inhaled Sensitisation, respiratory Category 1 Danger P261, P285, P304+P341, P342+P311, P501
+H335 May cause respiratory irritation Specific target organ toxicity, single exposure; Respiratory tract irritation Category 3 Warning P261, P271, P304+P340, P312, P403+P233, P405, P501
+H336 May cause drowsiness or dizziness Specific target organ toxicity,single exposure; Narcotic effects Category 3 Warning P261, P271, P304+P340, P312, P403+P233, P405, P501
+H340 May cause genetic defects Germ cell mutagenicity Category 1A, 1B Danger P201,P202, P281, P308+P313, P405, P501
+H341 Suspected of causing genetic defects Germ cell mutagenicity Category 2 Warning P201,P202, P281, P308+P313, P405, P501
+H350 May cause cancer Carcinogenicity Category 1A, 1B Danger P201, P202, P281, P308+P313, P405, P501
+H351 Suspected of causing cancer Carcinogenicity Category 2 Warning P201, P202, P281, P308+P313, P405, P501
+H360 May damage fertility or the unborn child Reproductive toxicity Category 1A, 1B Danger P201, P202, P281, P308+P313, P405, P501
+H361 Suspected of damaging fertility or the unborn child Reproductive toxicity Category 2 Warning P201, P202, P281, P308+P313, P405, P501
+H362 May cause harm to breast-fed children Reproductive toxicity, effects on or via lactation Additional category P201, P260, P263, P264, P270, P308+P313
+H370 Causes damage to organs Specific target organ toxicity, single exposure Category 1 Danger P260, P264, P270, P307+P311, P321, P405, P501
+H371 May cause damage to organs Specific target organ toxicity, single exposure Category 2 Warning P260, P264, P270, P309+P311, P405, P501
+H372 Causes damage to organs through prolonged or repeated exposure Specific target organ toxicity, repeated exposure Category 1 Danger P260, P264, P270, P314, P501
+H373 Causes damage to organs through prolonged or repeated exposure Specific target organ toxicity, repeated exposure Category 2 Warning P260, P314, P501
+H400 Very toxic to aquatic life Hazardous to the aquatic environment, acute hazard Category 1 Warning P273, P391, P501
+H401 Toxic to aquatic life Hazardous to the aquatic environment, acute hazard Category 2 P273, P501
+H402 Harmful to aquatic life Hazardous to the aquatic environment, acute hazard Category 3 P273, P501
+H410 Very toxic to aquatic life with long lasting effects Hazardous to the aquatic environment, long-term hazard Category 1 Warning P273, P391, P501
+H411 Toxic to aquatic life with long lasting effects Hazardous to the aquatic environment, long-term hazard Category 2 P273, P391, P501
+H412 Harmful to aquatic life with long lasting effects Hazardous to the aquatic environment, long-term hazard Category 3 P273, P501
+H413 May cause long lasting harmful effects to aquatic life Hazardous to the aquatic environment, long-term hazard Category 4 P273, P501
+H420 Harms public health and the environment by destroying ozone in the upper atmosphere Hazardous to the ozone layer Category 1 Warning P502

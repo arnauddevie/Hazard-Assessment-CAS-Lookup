@@ -1,0 +1,144 @@
+Precautionary statements - General
+P101 If medical advice is needed, have product container or label at hand.
+P102 Keep out of reach of children.
+P103 Read label before use
+Precautionary statements — Prevention
+P201 Obtain special instructions before use.
+P202 Do not handle until all safety precautions have been read and understood.
+P210 Keep away from heat/sparks/open flames/hot surfaces. No smoking.
+P211 Do not spray on an open flame or other ignition source.
+P220 Keep/Store away from clothing/.../combustible materials.
+P221 Take any precaution to avoid mixing with combustibles/...
+P222 Do not allow contact with air.
+P223 Keep away from any possible contact with water, because of violent reaction and possible flash fire.
+P230 Keep wetted with ...
+P231 Handle under inert gas.
+P232 Protect from moisture.
+P233 Keep container tightly closed.
+P234 Keep only in original container.
+P235 Keep cool.
+P240 Ground/bond container and receiving equipment.
+P241 Use explosion-proof electrical/ventilating/lighting/.../equipment.
+P242 Use only non-sparking tools.
+P243 Take precautionary measures against static discharge.
+P244 Keep reduction valves free from grease and oil.
+P250 Do not subject to grinding/shock/.../friction.
+P251 Pressurized container: Do not pierce or burn, even after use.
+P260 Do not breathe dust/fume/gas/mist/vapors/spray.
+P261 Avoid breathing dust/fume/gas/mist/vapors/spray.
+P262 Do not get in eyes, on skin, or on clothing.
+P263 Avoid contact during pregnancy/while nursing.
+P264 Wash hands thoroughly after handling.
+P264 Wash skin thoroughly after handling.
+P270 Do not eat, drink or smoke when using this product.
+P271 Use only outdoors or in a well-ventilated area.
+P272 Contaminated work clothing should not be allowed out of the workplace.
+P273 Avoid release to the environment.
+P280 Wear protective gloves/protective clothing/eye protection/face protection.
+P281 Use personal protective equipment as required.
+P282 Wear cold insulating gloves/face shield/eye protection.
+P283 Wear fire/flame resistant/retardant clothing.
+P284 Wear respiratory protection.
+P285 In case of inadequate ventilation wear respiratory protection.
+P231 + P232 Handle under inert gas. Protect from moisture.
+P235 + P410 Keep cool. Protect from sunlight.
+Precautionary statements — Response
+P301 IF SWALLOWED:
+P302 IF ON SKIN:
+P303 IF ON SKIN (or hair):
+P304 IF INHALED:
+P305 IF IN EYES:
+P306 IF ON CLOTHING:
+P307 IF exposed:
+P308 IF exposed or concerned:
+P309 IF exposed or if you feel unwell:
+P310 Immediately call a POISON CENTER or doctor/physician.
+P311 Call a POISON CENTER or doctor/physician.
+P312 Call a POISON CENTER or doctor/physician if you feel unwell.
+P313 Get medical advice/attention.
+P314 Get medical advice/attention if you feel unwell.
+P315 Get immediate medical advice/attention.
+P320 Specific treatment is urgent (see ... on this label).
+P321 Specific treatment (see ... on this label).
+P322 Specific measures (see ...on this label).
+P330 Rinse mouth.
+P331 Do NOT induce vomiting.
+P332 IF SKIN irritation occurs:
+P333 If skin irritation or rash occurs:
+P334 Immerse in cool water/wrap n wet bandages.
+P335 Brush off loose particles from skin.
+P336 Thaw frosted parts with lukewarm water. Do not rub affected area.
+P337 If eye irritation persists:
+P338 Remove contact lenses, if present and easy to do. Continue rinsing.
+P340 Remove victim to fresh air and keep at rest in a position comfortable for breathing.
+P341 If breathing is difficult, remove victim to fresh air and keep at rest in a position comfortable for breathing.
+P342 If experiencing respiratory symptoms:
+P350 Gently wash with plenty of soap and water.
+P351 Rinse cautiously with water for several minutes.
+P352 Wash with plenty of soap and water.
+P353 Rinse skin with water/shower.
+P360 Rinse immediately contaminated clothing and skin with plenty of water before removing clothes.
+P361 Remove/Take off immediately all contaminated clothing.
+P362 Take off contaminated clothing and wash before reuse.
+P363 Wash contaminated clothing before reuse.
+P370 In case of fire:
+P371 In case of major fire and large quantities:
+P372 Explosion risk in case of fire.
+P373 DO NOT fight fire when fire reaches explosives.
+P374 Fight fire with normal precautions from a reasonable distance.
+P376 Stop leak if safe to do so. Oxidizing gases (section 2.4) 1
+P377 Leaking gas fire: Do not extinguish, unless leak can be stopped safely.
+P378 Use ... for extinction.
+P380 Evacuate area.
+P381 Eliminate all ignition sources if safe to do so.
+P390 Absorb spillage to prevent material damage.
+P391 Collect spillage. Hazardous to the aquatic environment
+P301 + P310 IF SWALLOWED: Immediately call a POISON CENTER or doctor/physician.
+P301 + P312 IF SWALLOWED: call a POISON CENTER or doctor/physician IF you feel unwell.
+P301 + P330 + P331 IF SWALLOWED: Rinse mouth. Do NOT induce vomiting.
+P302 + P334 IF ON SKIN: Immerse in cool water/wrap in wet bandages.
+P302 + P350 IF ON SKIN: Gently wash with plenty of soap and water.
+P302 + P352 IF ON SKIN: wash with plenty of soap and water.
+P303 + P361 + P353 IF ON SKIN (or hair): Remove/Take off Immediately all contaminated clothing. Rinse SKIN with water/shower.
+P304 + P312 IF INHALED: Call a POISON CENTER or doctor/physician if you feel unwell.
+P304 + P340 IF INHALED: Remove victim to fresh air and Keep at rest in a position comfortable for breathing.
+P304 + P341 IF INHALED: If breathing is difficult, remove victim to fresh air and keep at rest in a position comfortable for breathing.
+P305 + P351 + P338 IF IN EYES: Rinse cautiously with water for several minutes. Remove contact lenses, if present and easy to do. Continue rinsing.
+P305 + P351 + P338 + P310 IF IN EYES: Rinse cautiously with water for several minutes. Remove contact lenses, if present and easy to do. Continue rinsing. Immediately call a POISON CENTER/doctor.
+P306 + P360 IF ON CLOTHING: Rinse Immediately contaminated CLOTHING and SKIN with plenty of water before removing clothes.
+P307 + P311 IF exposed: call a POISON CENTER or doctor/physician.
+P308 + P313 IF exposed or concerned: Get medical advice/attention.
+P309 + P311 IF exposed or if you feel unwell: call a POISON CENTER or doctor/physician.
+P332 + P313 IF SKIN irritation occurs: Get medical advice/attention.
+P333 + P313 IF SKIN irritation or rash occurs: Get medical advice/attention.
+P335 + P334 Brush off loose particles from skin. Immerse in cool water/wrap in wet bandages.
+P337 + P313 IF eye irritation persists: Get medical advice/attention.
+P342 + P311 IF experiencing respiratory symptoms: call a POISON CENTER or doctor/physician.
+P370 + P376 In case of fire: Stop leak if safe to Do so.
+P370 + P378 In case of fire: Use ... for extinction.
+P370 + P380 In case of fire: Evacuate area.
+P370 + P380 + P375 In case of fire: Evacuate area. Fight fire remotely due to the risk of explosion.
+P371 + P380 + P375 In case of major fire and large quantities: Evacuate area. Fight fire remotely due to the risk of explosion.
+Precautionary statements — Storage
+P401 Store ...
+P402 Store in a dry place.
+P403 Store in a well-ventilated place.
+P404 Store in a closed container.
+P405 Store locked up.
+P406 Store in corrosive resistant/... container with a resistant inner liner.
+P407 Maintain air gap between stacks/pallets.
+P410 Protect from sunlight.
+P411 Store at temperatures not exceeding ... °C/...°F.
+P412 Do not expose to temperatures exceeding 50 °C/ 122 °F.
+P413 Store bulk masses greater than ... kg/...lbs at temperatures not exceeding ... °C/...°F.
+P420 Store away from other materials.
+P422 Store contents under ...
+P402 + P404 Store in a dry place. Store in a closed container.
+P403 + P233 Store in a well-ventilated place. Keep container tightly closed.
+P403 + P235 Store in a well-ventilated place. Keep cool.
+P410 + P403 Protect from sunlight. Store in a well-ventilated place.
+P410 + P412 Protect from sunlight. Do not expose to temperatures exceeding 50 °C/122°F.
+P411 + P235 Store at temperatures not exceeding ... °C/...°F. Keep cool.
+Precautionary statements — Disposal
+P501 Dispose of contents/container to ...
+P502 Refer to manufacturer/supplier for information on recovery/recycling
