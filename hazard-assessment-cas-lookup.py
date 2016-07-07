@@ -75,6 +75,7 @@ Ppattern = '(P[0-9]{3}[0-9P\+]*)' # the letter P followed by 3 digits, including
 Hpattern = '(H[0-9]{3}(?i)[ifd0-9H\+]*)' # the letter H followed by 3 digits, including '+' combo, case insensitive fd
 
 # Parse H2P text file
+# alternate syntax : with open('') as file:
 textfile = open('H2P.txt', 'r')
 
 # Initialize dictionary
@@ -257,24 +258,28 @@ for CAS in CASlist:
             print('No PPE listed for %s - %s' % (CAS, Name))
 
         # Download SDS as PDF file
-        driver.get("http://www.sigmaaldrich.com/MSDS/MSDS/DisplayMSDSPage.do?country=%s&language=en&productNumber=%s&brand=%s" %(country, productNumber, brand));
-        print("Downloading SDS file", end='')
+        sdsName = Name + " - SDS.pdf"
+        sdsURL = os.path.join("SDS", sdsName)
+        chemical['SDSfile'] = sdsURL
 
-        timedout = False
-        timeout = time.time()
-        while ("PrintMSDSAction.pdf" not in os.listdir('SDS')) and not timedout:
-            print(".", end='')
-            timeout = time.time() - timeout
-            timedout = (timeout>30)
-            time.sleep(1)
+        if sdsName not in os.listdir('SDS'):
 
-        if timedout:
-            print(" Timed Out! Could not get the file")
-        else:
-            print(" Done.")
-            sdsURL = os.path.join("SDS", Name + " - SDS.pdf")
-            chemical['SDSfile'] = sdsURL
-            os.rename(os.path.join("SDS","PrintMSDSAction.pdf"), sdsURL)
+            driver.get("http://www.sigmaaldrich.com/MSDS/MSDS/DisplayMSDSPage.do?country=%s&language=en&productNumber=%s&brand=%s" %(country, productNumber, brand));
+            print("Downloading SDS file", end='')
+
+            timedout = False
+            timeout = time.time()
+            while ("PrintMSDSAction.pdf" not in os.listdir('SDS')) and not timedout:
+                print(".", end='')
+                timeout = time.time() - timeout
+                timedout = (timeout>30)
+                time.sleep(1)
+
+            if timedout:
+                print(" Timed Out! Could not get the file")
+            else:
+                print(" Done.")
+                os.rename(os.path.join("SDS","PrintMSDSAction.pdf"), sdsURL)
 
         # Store chemical
         chemicals.append(chemical)
@@ -493,7 +498,7 @@ PPElist.close()
 
 # Export to Excel file (via xlsxwriter)
 writer = pandas.ExcelWriter('Hazard Assessment.xlsx', engine='xlsxwriter')
-ChemicalsDF.sort_values('Name').to_excel(writer,'Inventory', index=False, na_rep='-', escape=False)
+chemicalsDF.sort_values('Name').to_excel(writer,'Inventory', index=False, na_rep='-')
 Hcombo.sort_values('Code').to_excel(writer,'Hazards', index=False, na_rep='-')
 Punique.sort_values('Code').to_excel(writer,'Precautions', index=False, na_rep='-')
 PPEunique.sort_values('Item').to_excel(writer,'PPE', index=False, na_rep='-')
