@@ -472,17 +472,17 @@ inventory.write(chemicalsDF.sort_values('Name').to_html(index=False, na_rep='-',
 inventory.close()
 
 # Export Hazards and supplemental Hazards to HTML file
-Hlist = open('Hlist.html','w')
+Hlist = open('Hazards.html','w')
 Hlist.write(Hcombo.sort_values('Code').to_html(index=False, na_rep='-', columns=['Code', 'Count', 'Statement', 'Assoc.Chemical', 'Prevention', 'Response', 'Storage', 'Disposal']))
 Hlist.close()
 
 # Export Precautions to HTML file
-Plist = open('Plist.html','w')
+Plist = open('Precautions.html','w')
 Plist.write(Punique.sort_values('Code').to_html(index=False, na_rep='-', columns=['Code', 'Count', 'Statement', 'Assoc.Chemical']))
 Plist.close()
 
 # Export PPE to HTML file
-PPElist = open('PPElist.html','w')
+PPElist = open('PPE.html','w')
 PPElist.write(PPEunique.sort_values('Item').to_html(index=False, na_rep='-', columns=['Item', 'Count', 'Assoc.Chemical']))
 PPElist.close()
 
@@ -493,7 +493,8 @@ PPElist.close()
 
 # Export to Excel file (via xlsxwriter)
 writer = pandas.ExcelWriter('Hazard Assessment.xlsx', engine='xlsxwriter')
-Hcombo.sort_values('Code').to_excel(writer,'Hazard Assessment', index=False, na_rep='-')
+ChemicalsDF.sort_values('Name').to_excel(writer,'Inventory', index=False, na_rep='-', escape=False)
+Hcombo.sort_values('Code').to_excel(writer,'Hazards', index=False, na_rep='-')
 Punique.sort_values('Code').to_excel(writer,'Precautions', index=False, na_rep='-')
 PPEunique.sort_values('Item').to_excel(writer,'PPE', index=False, na_rep='-')
 writer.save()
