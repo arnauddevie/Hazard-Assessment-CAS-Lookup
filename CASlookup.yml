@@ -1,11 +1,11 @@
-name: C:\Anaconda\envs\CASlookup
+name: CASlookup
 dependencies:
 - beautifulsoup4=4.4.1=py35_0
 - mkl=11.3.3=1
 - numpy=1.11.0=py35_2
 - pandas=0.18.1=np111py35_0
 - pip=8.1.2=py35_0
-- python=3.5.1=5
+- python=3.5.2=0
 - python-dateutil=2.5.3=py35_0
 - pytz=2016.4=py35_0
 - scipy=0.17.1=np111py35_1
@@ -15,5 +15,8 @@ dependencies:
 - vs2015_runtime=14.0.25123=0
 - wheel=0.29.0=py35_0
 - xlsxwriter=0.9.2=py35_0
+- pip:
+  - cssselect==0.9.2
+  - selenium==2.53.6
 prefix: C:\Anaconda\envs\CASlookup
 
