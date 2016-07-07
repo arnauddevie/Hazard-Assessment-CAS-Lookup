@@ -13,10 +13,13 @@ Created on Thu Jun 23 17:17:45 2016
 # Libraries
 #==============================================================================
 import re
+import os
 import sys
-import urllib
+import time
 import pandas
+import urllib
 from bs4 import BeautifulSoup
+from selenium import webdriver
 
 #==============================================================================
 # Functions
@@ -138,6 +141,32 @@ for hcode in H2P:
 # Data mining Sigma Aldrich website
 #==============================================================================
 
+# Start Chrome instance
+chromeOptions = webdriver.ChromeOptions()
+
+if "SDS" not in os.listdir():
+    os.mkdir("SDS")
+
+prefs = {"download.default_directory" : os.path.join(os.getcwd(),"SDS"),
+         "download.prompt_for_download" : False,
+         "download.directory_upgrade" : True,
+         "plugins.plugins_disabled" : ["Chrome PDF Viewer"]}
+chromeOptions.add_experimental_option("prefs",prefs)
+chromeOptions.add_argument("--disable-extensions")
+
+if 'win' in sys.platform: # Windows
+    chromedriver = os.path.join(os.getcwd(),'chromedriver','win32','chromedriver.exe')
+elif 'darwin' in sys.platform: # Mac OS
+    chromedriver = os.path.join(os.getcwd(),'chromedriver','mac32','chromedriver')
+elif 'linux' in sys.platform: # Linux
+    if sys.maxsize > 2**32: # 64-bit
+        chromedriver = os.path.join(os.getcwd(),'chromedriver','linux64','chromedriver')
+    else: # 32-bit
+        chromedriver = os.path.join(os.getcwd(),'chromedriver','linux32','chromedriver')
+
+driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chromeOptions)
+driver.set_window_position(-2000, 0)
+
 # Initialize
 chemicals=list()
 CASdict = dict()
@@ -159,16 +188,25 @@ for CAS in CASlist:
         webpage = urllib.request.urlopen(searchURL).read()
         soup = BeautifulSoup(webpage, "html.parser")
         product = soup.find("li", class_='productNumberValue')
+        productSubURL = product.a.decode().split('"')[1]
+        sds = soup.find("li", class_='msdsValue')
+        pattern = '\'(\w*)\'' # any string between ''
+        [country, language, productNumber, brand] = re.findall(pattern, sds.a.get('href'))
+        properties = soup.find("ul", class_="nonSynonymProperties")
+        formula = striphtml(properties.span.decode_contents())
 
         # Webscraping product page
-        productURL = 'http://www.sigmaaldrich.com[INSERT-HERE]'.replace('[INSERT-HERE]', product.a.decode().split('"')[1])
+        productURL = 'http://www.sigmaaldrich.com[INSERT-HERE]'.replace('[INSERT-HERE]', productSubURL)
         webpage2 = urllib.request.urlopen(productURL).read()
         soup2 = BeautifulSoup(webpage2, "html.parser")
 
         # Store URLs
-        URL['search'] = searchURL
-        URL['product'] = productURL
-        chemical['URL'] = URL
+        chemical['SearchURL'] = searchURL
+        chemical['ProductURL'] = productURL
+        chemical['ProductNumber'] = productNumber
+        chemical['Brand'] = brand
+        chemical['Formula'] = formula
+
 
         # Name (compatible with cp437 characters set)
         Name = clean(soup2.find("h1", itemprop="name").decode_contents().split('\n')[1])
@@ -218,12 +256,36 @@ for CAS in CASlist:
         except:
             print('No PPE listed for %s - %s' % (CAS, Name))
 
+        # Download SDS as PDF file
+        driver.get("http://www.sigmaaldrich.com/MSDS/MSDS/DisplayMSDSPage.do?country=%s&language=en&productNumber=%s&brand=%s" %(country, productNumber, brand));
+        print("Downloading SDS file", end='')
+
+        timedout = False
+        timeout = time.time()
+        while ("PrintMSDSAction.pdf" not in os.listdir('SDS')) and not timedout:
+            print(".", end='')
+            timeout = time.time() - timeout
+            timedout = (timeout>30)
+            time.sleep(1)
+
+        if timedout:
+            print(" Timed Out! Could not get the file")
+        else:
+            print(" Done.")
+            sdsURL = os.path.join("SDS", Name + " - SDS.pdf")
+            chemical['SDSfile'] = sdsURL
+            os.rename(os.path.join("SDS","PrintMSDSAction.pdf"), sdsURL)
+
         # Store chemical
         chemicals.append(chemical)
+
     except:
         badCAS.append(CAS)
         print('Could not process %s - %s' % (CAS, Name))
         e = sys.exc_info()[0]
+
+# Close Chrome instance
+driver.quit()
 
 # Display
 print('Processed %d chemicals out of %d CAS numbers received' % (len(chemicals),len(CASlist)))
@@ -234,7 +296,7 @@ if len(badCAS) > 0:
 
 #%% Post processing
 #==============================================================================
-# Compilation of H-statements
+# Compilation of Statements
 #==============================================================================
 # Inventory of H-, P- and PPE statements
 Hlist = list()
@@ -392,23 +454,36 @@ Hsuppunique['Assoc.Chemical']   = Hsuppunique['Statement'].map(HsuppfromChemical
 # Concatenate GHS Hazards and supplemental Hazards
 Hcombo = pandas.concat([Hunique, Hsuppunique])
 
+#==============================================================================
+# Table of all chemicals
+#==============================================================================
+chemicalsDF = pandas.DataFrame(chemicals)
+chemicalsDF['Product Number'] = chemicalsDF.apply(lambda row: '<a href="' + row['ProductURL'] + '">' + row['ProductNumber'] + '</a>',axis=1)
+chemicalsDF['SDS'] = chemicalsDF.apply(lambda row: '<a href="' + row['SDSfile'] + '">SDS</a>',axis=1)
+
+
 #%% Export
 # HTML table settings
 pandas.set_option('display.max_colwidth', -1)
 
+# List of chemicals, sorted by name, with CAS, URL, SDS,...
+inventory = open("Inventory.html",'w')
+inventory.write(chemicalsDF.sort_values('Name').to_html(index=False, na_rep='-', escape=False, columns=['Name', 'Synonyms', 'CAS', 'Formula', 'Hazards', 'Precautions', 'PPE', 'Product Number', 'SDS']))
+inventory.close()
+
 # Export Hazards and supplemental Hazards to HTML file
 Hlist = open('Hlist.html','w')
-Hlist.write(Hcombo.sort_values('Code').to_html(index=False, columns=['Code', 'Count', 'Statement', 'Assoc.Chemical', 'Prevention', 'Response', 'Storage', 'Disposal'], na_rep='-'))
+Hlist.write(Hcombo.sort_values('Code').to_html(index=False, na_rep='-', columns=['Code', 'Count', 'Statement', 'Assoc.Chemical', 'Prevention', 'Response', 'Storage', 'Disposal']))
 Hlist.close()
 
 # Export Precautions to HTML file
 Plist = open('Plist.html','w')
-Plist.write(Punique.sort_values('Code').to_html(index=False, columns=['Code', 'Count', 'Statement', 'Assoc.Chemical'], na_rep='-'))
+Plist.write(Punique.sort_values('Code').to_html(index=False, na_rep='-', columns=['Code', 'Count', 'Statement', 'Assoc.Chemical']))
 Plist.close()
 
 # Export PPE to HTML file
 PPElist = open('PPElist.html','w')
-PPElist.write(PPEunique.sort_values('Item').to_html(index=False, columns=['Item', 'Count', 'Assoc.Chemical'], na_rep='-'))
+PPElist.write(PPEunique.sort_values('Item').to_html(index=False, na_rep='-', columns=['Item', 'Count', 'Assoc.Chemical']))
 PPElist.close()
 
 ## Export supplemental Hazards to HTML file
