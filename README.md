@@ -54,6 +54,6 @@ activate CASlookup
 ```
 3 - Run
 ```python
-python hazard-assessment-cas-lookup.py
+python hazard_assessment_cas_lookup.py
 ```
 4 - Browse the output files  
